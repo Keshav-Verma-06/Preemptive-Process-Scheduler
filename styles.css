@@ -1,0 +1,414 @@
+/* Base styles */
+:root {
+    --primary-color: #4a6fa5;
+    --secondary-color: #47b475;
+    --danger-color: #e74c3c;
+    --dark-color: #2c3e50;
+    --light-color: #ecf0f1;
+    --border-color: #bdc3c7;
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f5f7fa;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: var(--dark-color);
+    color: white;
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+}
+
+.subtitle {
+    opacity: 0.8;
+    margin-top: 5px;
+}
+
+h1, h2, h3 {
+    margin-bottom: 15px;
+}
+
+/* Form styles */
+.input-section, .process-list-section, .algorithm-section, .results-section, .saved-simulations-section {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-danger {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+.btn-success {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+/* Table styles */
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    background-color: var(--dark-color);
+    color: white;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* Algorithm section */
+.algorithm-selection {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+}
+
+#algorithm-select {
+    flex: 1;
+    min-width: 200px;
+}
+
+#time-quantum-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#time-quantum-container label {
+    margin-bottom: 0;
+}
+
+#time-quantum-container input {
+    width: 80px;
+}
+
+/* Results section */
+.metrics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
+
+.metric-item {
+    flex: 1;
+    min-width: 200px;
+}
+
+.metric-label {
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+.metric-value {
+    font-size: 18px;
+    color: var(--primary-color);
+}
+
+/* Gantt chart */
+.gantt-chart-container {
+    margin-bottom: 30px;
+}
+
+#gantt-chart {
+    display: flex;
+    margin-bottom: 5px;
+    min-height: 50px;
+}
+
+.gantt-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    color: white;
+    font-weight: bold;
+    border-right: 1px solid white;
+    position: relative;
+}
+
+.gantt-block.preempted::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background-color: rgba(255, 255, 255, 0.7);
+    z-index: 2;
+}
+
+#gantt-timeline {
+    display: flex;
+    font-size: 12px;
+    color: #666;
+}
+
+.timeline-marker {
+    position: relative;
+}
+
+.timeline-marker::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 0;
+    height: 5px;
+    width: 1px;
+    background-color: #666;
+}
+
+/* Saved simulations */
+.saved-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.saved-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.saved-item-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* Utility classes */
+.hidden {
+    display: none !important;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+    
+    .algorithm-section, .input-section {
+        width: 100%;
+    }
+    
+    .process-list-section, .results-section, .saved-simulations-section {
+        width: 100%;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .algorithm-selection {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    #time-quantum-container {
+        margin-top: 10px;
+    }
+}
+
+/* Process colors for Gantt chart */
+.process-color-0 { background-color: #4a6fa5; }
+.process-color-1 { background-color: #47b475; }
+.process-color-2 { background-color: #e74c3c; }
+.process-color-3 { background-color: #f39c12; }
+.process-color-4 { background-color: #9b59b6; }
+.process-color-5 { background-color: #1abc9c; }
+.process-color-6 { background-color: #d35400; }
+.process-color-7 { background-color: #34495e; }
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    color: #666;
+}
+
+/* Button sizes */
+.btn-sm {
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+/* Text alignment */
+.text-center {
+    text-align: center;
+}
+
+/* Additional styles for better UI */
+.saved-item-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.saved-item-info strong {
+    font-size: 16px;
+    margin-bottom: 3px;
+}
+
+.saved-item-info span {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Idle time in Gantt chart */
+.gantt-block.idle {
+    background-color: #95a5a6;
+    color: #2c3e50;
+}
+
+/* Legend for Gantt chart */
+.gantt-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.legend-color {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    border-radius: 3px;
+}
+
+/* Preemption indicator */
+.preemption-indicator {
+    width: 3px;
+    height: 20px;
+    background-color: white;
+    margin-right: 5px;
+}
+
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.algorithm-section, .input-section {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.results-section, .saved-simulations-section {
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.process-list-section {
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}

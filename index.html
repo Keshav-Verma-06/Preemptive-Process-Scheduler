@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Preemptive Process Scheduler</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>Preemptive Process Scheduler</h1>
+                <p class="subtitle">Simulate and visualize preemptive CPU scheduling algorithms</p>
+            </header>
+            
+            <div class="main-content">
+            <div class="algorithm-section">
+                <h2>Scheduling Algorithm</h2>
+                <div class="algorithm-selection">
+                    <select id="algorithm-select">
+                        <option value="srtf">Shortest Remaining Time First (SRTF)</option>
+                        <option value="pp">Preemptive Priority</option>
+                        <option value="rr">Round Robin</option>
+                    </select>
+                    <div id="time-quantum-container">
+                        <label for="time-quantum">Time Quantum:</label>
+                        <input type="number" id="time-quantum" min="1" value="2">
+                    </div>
+                    <button id="run-algorithm" class="btn btn-success">Run Algorithm</button>
+                </div>
+            </div>
+            <div class="input-section">
+                <h2>Process Input</h2>
+                <form id="process-form">
+                    <div class="form-group">
+                        <label for="process-id">Process ID:</label>
+                        <input type="text" id="process-id" placeholder="P1, P2, etc." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="arrival-time">Arrival Time:</label>
+                        <input type="number" id="arrival-time" min="0" value="0" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="burst-time">Burst Time:</label>
+                        <input type="number" id="burst-time" min="1" value="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="priority">Priority (lower value = higher priority):</label>
+                        <input type="number" id="priority" min="1" value="1">
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Add Process</button>
+                        <button type="button" id="clear-processes" class="btn btn-danger">Clear All</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="process-list-section">
+                <h2>Process List</h2>
+                <div class="table-container">
+                    <table id="process-table">
+                        <thead>
+                            <tr>
+                                <th>Process ID</th>
+                                <th>Arrival Time</th>
+                                <th>Burst Time</th>
+                                <th>Priority</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="process-list">
+                            <!-- Process rows will be added here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+            <div class="results-section hidden" id="results-section">
+                <h2>Scheduling Results</h2>
+                <div class="metrics">
+                    <div class="metric-item">
+                        <span class="metric-label">Average Waiting Time:</span>
+                        <span id="avg-waiting-time" class="metric-value">0</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-label">Average Turnaround Time:</span>
+                        <span id="avg-turnaround-time" class="metric-value">0</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-label">Average Response Time:</span>
+                        <span id="avg-response-time" class="metric-value">0</span>
+                    </div>
+                </div>
+                <div class="gantt-chart-container">
+                    <h3>Gantt Chart</h3>
+                    <div id="gantt-chart"></div>
+                    <div id="gantt-timeline"></div>
+                </div>
+                <div class="process-details">
+                    <h3>Process Details</h3>
+                    <div class="table-container">
+                        <table id="results-table">
+                            <thead>
+                                <tr>
+                                    <th>Process ID</th>
+                                    <th>Arrival Time</th>
+                                    <th>Burst Time</th>
+                                    <th>Completion Time</th>
+                                    <th>Turnaround Time</th>
+                                    <th>Waiting Time</th>
+                                    <th>Response Time</th>
+                                </tr>
+                            </thead>
+                            <tbody id="results-list">
+                                <!-- Result rows will be added here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="save-section">
+                    <h3>Save This Simulation</h3>
+                    <div class="form-group">
+                        <label for="simulation-name">Simulation Name:</label>
+                        <input type="text" id="simulation-name" placeholder="My Simulation">
+                    </div>
+                    <button id="save-simulation" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+
+            <div class="saved-simulations-section">
+                <h2>Saved Simulations</h2>
+                <div class="saved-list" id="saved-simulations">
+                    <!-- Saved simulations will be added here -->
+                    <p id="no-saved-message">No saved simulations yet.</p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Preemptive Process Scheduler &copy; 2025</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
