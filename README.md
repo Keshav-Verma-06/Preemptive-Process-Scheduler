@@ -19,21 +19,26 @@ It aims to simulate real-world OS functionalities and provide hands-on experienc
 - Synchronization (e.g., Semaphores, Mutex)
 
 ## 🚀 How to Run the Project
-1. Clone the repository:
+
+1. Download or clone the repository:
    ```bash
    git clone https://github.com/your-username/your-repo-name.git
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd your-repo-name
-   ```
-3. Compile the project:
-   ```bash
-   gcc main.c -o os_project
-   ```
-4. Run the executable:
-   ```bash
-   ./os_project
-   ```
+2. Navigate to the project folder:
+
+bash
+Copy
+Edit
+cd your-repo-name
+Open the main HTML file:
+
+3. Locate the index.html file (or whatever your main HTML file is named).
+
+Double-click to open it in your default web browser.
+
+OR
+
+Right-click → Open With → Choose Browser (Chrome, Edge, Firefox, etc.)
+
+That's it! 🎉 No compilation or server needed unless you are using advanced things like PHP, Node.js, or databases.
 
 ---
