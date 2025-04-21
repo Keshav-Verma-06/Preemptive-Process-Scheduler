@@ -412,3 +412,13 @@ footer {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
 }
+
+.note {
+    font-size: 12px;
+    color: #555;
+    background-color: #f9f9f9;
+    border-left: 4px solid #4a6fa5;
+    padding: 8px 12px;
+    margin-top: 8px;
+    border-radius: 4px;
+}
